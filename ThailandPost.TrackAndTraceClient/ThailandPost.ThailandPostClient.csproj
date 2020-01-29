@@ -2,11 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Soopparerk Machaiwong</Authors>
-    <Company>JumboZ</Company>
+    <Authors>jbjumbojb</Authors>
+    <Company></Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/jbjumbojb/ThailandPostClient</RepositoryUrl>
     <PackageId>ThailandPostClient</PackageId>
+    <Product>ThailandPostClient</Product>
+    <PackageProjectUrl>https://github.com/jbjumbojb/ThailandPostClient</PackageProjectUrl>
+    <PackageIcon></PackageIcon>
+    <PackageIconUrl />
+    <Version>1.0.1</Version>
+    <PackageTags />
   </PropertyGroup>
 
   <ItemGroup>
