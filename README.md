@@ -9,21 +9,23 @@ PM> Install-Package ThailandPostClient
 ## Usage
 
 ```csharp
+using ThailandPost;
 using ThailandPost.TrackAndTraceClient;
 
 var trackingClient = new TrackAndTraceClient();
-GetTokenResponse accessToken = trackingClient.GetAccessTokenAsync(**AppToken**);
+GetTokenResponse accessToken = await trackingClient.GetAccessTokenAsync(**AppToken**);
 //save token for future use
 var tokenExpire = accessToken.Expire; //check expire
 var token = accessToken.Token;
 
-ResponseResult<GetItemsResponse> result = await trackingClient.GetItemsAsync(token, new string[]{"EY145587896TH","RC338848854TH"},ThailandPost.Language.TH);
+ResponseResult<GetItemsResponse> result = await trackingClient.GetItemsAsync(token, 
+    new string[]{"RX046927842JP","EN054724855JP"}, Language.TH);
 
 if(result.Status){
-    foreach(var item in Keyresult.Response.Items){
+    foreach(var item in result.Response.Items){
         Console.WriteLine($"{item.Key}:");
-        foreach(var status in item)
-            Console.WriteLine($"{status.StatusDescription} - {status.StatusDate}")
+        foreach(var status in item.Value)
+            Console.WriteLine($"{status.StatusDescription} - {status.StatusDate}");
     }
     /* 
         EY145587896TH:
