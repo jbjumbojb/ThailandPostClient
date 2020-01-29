@@ -1,6 +1,6 @@
 # ThailandPostClient
 
-## Prerequire
+## Prerequisite
 - ThailandPost *AppToken* ([register here](https://track.thailandpost.co.th/))
 ## Installation
 ```
@@ -34,3 +34,4 @@ if(result.Status){
     Console.WriteLine(result.Message);
 }
 ```
+The main documentation is [ThailandPost API Document](https://track.thailandpost.co.th/developerGuide)
