@@ -13,6 +13,7 @@
     <PackageIconUrl />
     <Version>1.0.1</Version>
     <PackageTags />
+    <Description>C# library for calling ThailandPost REST API</Description>
   </PropertyGroup>
 
   <ItemGroup>
