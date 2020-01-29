@@ -6,6 +6,7 @@
     <Company>JumboZ</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/jbjumbojb/ThailandPostClient</RepositoryUrl>
+    <PackageId>ThailandPostClient</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
