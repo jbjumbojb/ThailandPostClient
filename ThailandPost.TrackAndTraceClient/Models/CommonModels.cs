@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -31,5 +32,15 @@ namespace ThailandPost
         public T Response { get; set; }
         public string Message { get; set; }
         public bool Status { get; set; }
+    }
+
+    public class TrackCount
+    {
+        [JsonProperty(PropertyName = "track_date")]
+        public string TrackDate { get; set; }
+        [JsonProperty(PropertyName = "count_number")]
+        public int CountNumber { get; set; }
+        [JsonProperty(PropertyName = "track_count_limit")]
+        public int TrackCountLimit { get; set; }
     }
 }

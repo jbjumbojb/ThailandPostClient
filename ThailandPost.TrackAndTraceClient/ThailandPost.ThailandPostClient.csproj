@@ -9,15 +9,23 @@
     <PackageId>ThailandPostClient</PackageId>
     <Product>ThailandPostClient</Product>
     <PackageProjectUrl>https://github.com/jbjumbojb/ThailandPostClient</PackageProjectUrl>
-    <PackageIcon></PackageIcon>
+    <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl />
-    <Version>1.0.1</Version>
+    <Version>1.0.4</Version>
     <PackageTags />
     <Description>C# library for calling ThailandPost REST API</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

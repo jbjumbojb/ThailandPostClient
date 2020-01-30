@@ -9,15 +9,15 @@ using ThailandPost.ThailandPostClient;
 
 namespace ThailandPost
 {
-    public class TrackAndTraceClient : BaseClient
+    public class WebhookClient : BaseClient
     {
-        public TrackAndTraceClient() : this("https://trackapi.thailandpost.co.th/post/api/v1/")
+        
+        public WebhookClient() : this("https://trackwebhook.thailandpost.co.th/post/api/v1/")
         {
         }
-        public TrackAndTraceClient(string endpoint) : base(null, endpoint)
+        public WebhookClient(string endpoint) : base(null, endpoint)
         {
         }
-
         public async Task<GetTokenResponse> GetAccessTokenAsync(string appToken)
         {
             var response = await GetHttpClient(appToken).PostAsync("authenticate/token", new StringContent(string.Empty));
@@ -29,17 +29,16 @@ namespace ThailandPost
                 Token = responseJson.token
             };
         }
-
-        public async Task<ResponseResult<GetItemsResponse>> GetItemsAsync(string accessToken, IEnumerable<string> trackingNumber, Language language = Language.TH, Status status = Status.All)
+        public async Task<ResponseResult<AddHookResponse>> AddHookAsync(string accessToken, IEnumerable<string> trackingNumber, Language language = Language.TH, Status status = Status.All)
         {
-            var response = await GetHttpClient(accessToken).PostAsync("track", ObjectToStringContent(new GetItemsRequest
+            var response = await GetHttpClient(accessToken).PostAsync("hook", ObjectToStringContent(new GetItemsRequest
             {
                 Barcode = trackingNumber,
                 Language = language.ToString(),
                 Status = status == 0 ? "all" : ((int)status).ToString()
             }));
             response.EnsureSuccessStatusCode();
-            return JsonConvert.DeserializeObject<ResponseResult<GetItemsResponse>>((await response.Content.ReadAsStringAsync()));
+            return JsonConvert.DeserializeObject<ResponseResult<AddHookResponse>>((await response.Content.ReadAsStringAsync()));
         }
     }
 }

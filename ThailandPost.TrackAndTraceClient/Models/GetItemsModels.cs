@@ -39,13 +39,5 @@ namespace ThailandPost
         public string Signature { get; set; }
     }
 
-    public class TrackCount
-    {
-        [JsonProperty(PropertyName = "track_date")]
-        public string TrackDate { get; set; }
-        [JsonProperty(PropertyName = "count_number")]
-        public int CountNumber { get; set; }
-        [JsonProperty(PropertyName = "track_count_limit")]
-        public int TrackCountLimit { get; set; }
-    }
+   
 }
