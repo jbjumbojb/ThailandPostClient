@@ -10,7 +10,6 @@ PM> Install-Package ThailandPostClient
 
 ```csharp
 using ThailandPost;
-using ThailandPost.TrackAndTraceClient;
 
 var trackingClient = new TrackAndTraceClient();
 GetTokenResponse accessToken = await trackingClient.GetAccessTokenAsync(**AppToken**);
